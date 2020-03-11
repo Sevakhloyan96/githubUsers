@@ -19,29 +19,27 @@ class Persons extends Component {
       users:res
     }))   
     }
+
     checkUser = (id) => {
-    this.state.users.filter((item) => {
+      let arr = this.state.users.filter((item) => {
          return item.id === id
-      })
+      });
+
       this.setState({
-        user:id
+        user: arr
       })
      }
     
   render(){
-    
     return(
-      
       <Switch>
-        <Route exact path="/users/">
-          <Users mrops={this.state.users } check={this.checkUser} />
-        </Route>
-        <Route path="/user:id/">
-          <User mrops={this.state.user} />
-        </Route>
-        
-        
-      </Switch>
+          <Route exact path="/users">
+            <Users mrops={this.state.users } checkUser={this.checkUser} />
+          </Route>
+          <Route path="/user/:id">
+            <User oneUser={this.state.user} />
+          </Route>
+        </Switch>
     )
   }
 }

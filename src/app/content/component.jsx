@@ -4,14 +4,16 @@ import {Switch,Route} from 'react-router-dom';
 import Home from './home';
 import Persons from './person/component';
 
-
 function Content() {
 	return(
 		<Switch>
       <Route path="/" exact >
         <Home />
       </Route>
-      <Route path="/users">
+      <Route path="/users/">
+        <Persons />
+      </Route>
+      <Route path="/user/:id">
         <Persons />
       </Route>
     </Switch>

@@ -4,13 +4,12 @@ import {BrowserRouter} from 'react-router-dom';
 import Header from './header';
 import Content from './content';
 
-
 function App() {
   return(
-      <BrowserRouter>
-          <Header />
-          <Content />
-      </BrowserRouter>
+    <BrowserRouter>
+      <Header />
+      <Content />
+    </BrowserRouter>
   )
 }
 

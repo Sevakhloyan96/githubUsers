@@ -1,18 +1,20 @@
 import React from 'react';
-import {Link} from 'react-router-dom'
 
 function User(props) {
-    const {mrops} = props
-    return(
+const { oneUser } = props;
+
+  return(
     <div>
-       
-       <div>
-       <img src={mrops.avatar_url} alt="name" key='id'/> 
-         
-       </div>
-       
+        {
+          oneUser.length ? 
+          <div>
+              <img  src={oneUser[0].avatar_url} alt="id"/>
+              <p>{oneUser[0].html_url}</p>
+          </div>
+          : <p>Garoo ekelaaa</p>  
+        }
     </div>
-    );
+  );
 };
 
 export default User;
